@@ -1,0 +1,22 @@
+{
+  "nfts": [
+    {
+      "id": "1",
+      "name": "Nas",
+      "image": "1.jpeg",
+      "price": 250
+    },
+    {
+      "id": "2",
+      "name": "Stullerag",
+      "image": "2.jpeg",
+      "price": 299
+    },
+    {
+      "id": "3",
+      "name": "Thissima",
+      "image": "3.jpeg",
+      "price": 100
+    }
+  ]
+}
