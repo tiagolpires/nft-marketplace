@@ -1,18 +1,13 @@
 import Image from 'next/image'
 import { NFTButtonCard } from '.'
+import { NFTType } from '../contexts/nfts'
 
-interface NFTCardProps {
-  nft: string
-  name: string
-  price: number
-}
-
-const NFTCard: React.FC<NFTCardProps> = ({ nft, name, price }) => {
+const NFTCard: React.FC<NFTType> = ({ image, name, price }) => {
   return (
     <div className="mx-6 my-4 rounded-lg bg-yankees-blue">
       <div className="d-block h-56 w-56">
         <Image
-          src={`/nfts/${nft}`}
+          src={`/nfts/${image}`}
           width={240}
           height={240}
           layout="responsive"
