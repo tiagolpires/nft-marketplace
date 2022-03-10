@@ -1,7 +1,7 @@
 const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <section>{children}</section>
+      <section className="flex justify-center">{children}</section>
     </>
   )
 }

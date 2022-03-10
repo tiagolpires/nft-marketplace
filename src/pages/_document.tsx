@@ -7,8 +7,12 @@ const Document: React.FC = () => {
         <meta charSet="utf-8" />
         <meta name="description" content="NFTs Marketplace" />
         <link rel="shortcut icon" href="favicon.ico" type="image/png" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+          rel="stylesheet"
+        ></link>
       </Head>
-      <body>
+      <body className="bg-eerie-black font-mont text-white">
         <Main />
         <NextScript />
       </body>
