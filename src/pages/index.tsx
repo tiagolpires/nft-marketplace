@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   }, [loadNFTs])
 
   return (
-    <main className="flex w-10/12 max-w-6xl flex-col items-center justify-center px-20 text-center">
+    <main className="flex w-10/12 max-w-6xl flex-col items-center justify-center text-center">
       <h1 className="text-6xl font-bold">
         Create and sell your <span className="text-byzantine">NFTs!</span>
       </h1>
