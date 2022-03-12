@@ -1,5 +1,5 @@
 import { createContext, useState, useCallback } from 'react'
-import axios from 'axios'
+import { Api } from '../helpers'
 
 export interface NFTType {
   name: string
@@ -22,7 +22,7 @@ export const NFTProvider: React.FC = ({ children }) => {
 
   const loadNFTs = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:3001/nfts')
+      const response = await Api.get('nfts')
       if (response.status === 200 || response.data) {
         setNFTs(response.data)
       }
