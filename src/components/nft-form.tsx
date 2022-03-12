@@ -1,8 +1,9 @@
-import { Input, Button } from '.'
+import { Input, Button, Carousel } from '.'
 
 const NFTForm: React.FC = () => {
   return (
     <form className="flex w-full flex-col items-center justify-center">
+      <Carousel />
       <Input label="Name" />
       <Input label="Price" />
       <div className="my-3 flex w-full max-w-xl">

@@ -14,6 +14,9 @@ module.exports = {
       },
       fontFamily: {
         'mont': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      scale: {
+        '65': '0.65',
       }
     },
   },
