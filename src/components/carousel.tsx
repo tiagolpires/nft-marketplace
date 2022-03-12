@@ -1,19 +1,16 @@
 import Image from 'next/image'
-import { useState } from 'react'
 import Slider from 'react-slick'
 
 const images = ['1.jpeg', '2.jpeg', '3.jpeg', '1.jpeg', '2.jpeg', '3.jpeg']
 
-const Carousel: React.FC = () => {
+const Carousel: React.FC<any> = ({ onChange, image }) => {
   const Arrow: React.FC<any> = ({ onClick, icon }) => {
     return (
       <div className="cursor-pointer" onClick={onClick}>
-        <Image src={`/icons/${icon}`} width="180px" height="180px" />
+        <Image src={`/icons/${icon}`} width="200px" height="200px" />
       </div>
     )
   }
-
-  const [imageIndex, setImageIndex] = useState(0)
 
   const settings = {
     infinite: true,
@@ -24,7 +21,7 @@ const Carousel: React.FC = () => {
     nextArrow: <Arrow icon="right-arrow.svg" />,
     prevArrow: <Arrow icon="left-arrow.svg" />,
     centerPadding: '0',
-    beforeChange: (current: any, next: any) => setImageIndex(next),
+    beforeChange: (current: any, next: any) => onChange(images[next]),
   }
 
   return (
@@ -37,7 +34,7 @@ const Carousel: React.FC = () => {
           <div
             key={idx}
             className={`scale-65  opacity-50 duration-300	 ${
-              idx === imageIndex && 'scale-110 opacity-100'
+              images[idx] === image && 'scale-110 opacity-100'
             }`}
           >
             <img className="rounded-lg" src={`/nfts/${img}`} />

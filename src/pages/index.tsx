@@ -16,14 +16,7 @@ const Home: React.FC = () => {
       </h1>
       <div className="flex w-full flex-wrap justify-center">
         {NFTs.length > 0 &&
-          NFTs.map((NFT, index) => (
-            <NFTCard
-              key={index}
-              image={NFT.image}
-              name={NFT.name}
-              price={NFT.price}
-            />
-          ))}
+          NFTs.map((NFT, index) => <NFTCard key={index} NFT={NFT} />)}
       </div>
     </main>
   )
