@@ -1,5 +1,5 @@
 import { Input, Button, Carousel } from '.'
-import { useState, FormEvent, useEffect } from 'react'
+import { useState, FormEvent, useEffect, useCallback } from 'react'
 import { CreateSchema } from '../validators/nftValidator'
 import Image from 'next/image'
 export interface formDataInterface {
@@ -20,11 +20,11 @@ const NFTForm: React.FC<NFTFormProps> = ({ onSubmit, data }) => {
     image: '1.jpeg',
   })
 
-  const parseData = () => {
+  const parseData = useCallback(() => {
     if (data) {
       setFormData(data)
     }
-  }
+  }, [data, setFormData])
 
   useEffect(() => {
     parseData()

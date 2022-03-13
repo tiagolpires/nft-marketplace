@@ -1,46 +1,22 @@
 {
   "nfts": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Nas",
       "image": "1.jpeg",
       "price": 250
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Stullerag",
       "image": "2.jpeg",
-      "price": 299
+      "price": "2994"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Thissima",
       "image": "3.jpeg",
       "price": 100
-    },
-    {
-      "name": "Tiagolin",
-      "price": "1234",
-      "image": "3.jpeg",
-      "id": "91A_Pte"
-    },
-    {
-      "name": "dafas",
-      "price": "daf",
-      "image": "1.jpeg",
-      "id": "Mz_oPmn"
-    },
-    {
-      "id": "6",
-      "name": "asfas",
-      "price": "as432",
-      "image": "3.jpeg"
-    },
-    {
-      "name": "lee sinho",
-      "price": "134",
-      "image": "1.jpeg",
-      "id": "GTAEeBW"
     }
   ]
 }

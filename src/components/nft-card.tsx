@@ -28,7 +28,9 @@ const NFTCard: React.FC<cardProps> = ({ NFT }) => {
         </div>
         <div className="flex justify-center">
           <Link href={`/nfts/${NFT.id}`}>
-            <NFTButtonCard icon="edit.svg" />
+            <a>
+              <NFTButtonCard icon="edit.svg" />
+            </a>
           </Link>
           <NFTButtonCard icon="trash.svg" />
         </div>

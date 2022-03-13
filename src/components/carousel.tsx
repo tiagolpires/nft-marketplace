@@ -7,7 +7,7 @@ const Carousel: React.FC<any> = ({ onChange, image }) => {
   const Arrow: React.FC<any> = ({ onClick, icon }) => {
     return (
       <div className="cursor-pointer" onClick={onClick}>
-        <Image src={`/icons/${icon}`} width="200px" height="200px" />
+        <Image src={`/icons/${icon}`} width="70px" height="70px" />
       </div>
     )
   }

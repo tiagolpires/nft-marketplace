@@ -4,6 +4,7 @@ import { Api } from '../helpers'
 import Router from 'next/router'
 
 export interface NFTType {
+  id?: number
   name: string
   image: string
   price: string
