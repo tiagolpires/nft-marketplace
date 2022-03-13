@@ -5,5 +5,15 @@ import NFTForm from './nft-form'
 import Input from './input'
 import Button from './button'
 import Carousel from './carousel'
+import Header from './header'
 
-export { Layout, NFTCard, NFTButtonCard, NFTForm, Input, Button, Carousel }
+export {
+  Layout,
+  NFTCard,
+  NFTButtonCard,
+  NFTForm,
+  Input,
+  Button,
+  Carousel,
+  Header,
+}
