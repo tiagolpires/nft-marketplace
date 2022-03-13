@@ -13,6 +13,7 @@ export interface NFTType {
 interface NFTContextData {
   loadNFTs: () => void
   loadOne: (id: number) => void
+  remove: (id: number | undefined) => void
   edit: (id: number, formData: formDataInterface) => void
   create: (formData: formDataInterface) => void
   NFTs: NFTType[]
@@ -26,6 +27,7 @@ export const NFTContext = createContext<NFTContextData>({
   create: () => {},
   edit: () => {},
   loadOne: () => {},
+  remove: () => {},
 })
 
 export const NFTProvider: React.FC = ({ children }) => {
@@ -76,8 +78,21 @@ export const NFTProvider: React.FC = ({ children }) => {
     }
   }, [])
 
+  const remove = useCallback(async (id: number | undefined) => {
+    try {
+      const response = await Api.delete(`nfts/${id}`)
+      if (response.status === 200 || response.data) {
+        setNFTs(NFTs.filter((nft: NFTType) => nft.id !== id))
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }, [])
+
   return (
-    <NFTContext.Provider value={{ loadNFTs, loadOne, create, NFTs, NFT, edit }}>
+    <NFTContext.Provider
+      value={{ loadNFTs, loadOne, create, NFTs, NFT, edit, remove }}
+    >
       {children}
     </NFTContext.Provider>
   )
