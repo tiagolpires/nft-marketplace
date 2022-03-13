@@ -1,9 +1,17 @@
-import { NFTCard, Header } from '../components'
+import { NFTCard, Header, ModalConfirm } from '../components'
 import { NFTContext } from '../contexts/nfts'
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 const Home: React.FC = () => {
-  const { loadNFTs, NFTs } = useContext(NFTContext)
+  const { loadNFTs, NFTs, remove } = useContext(NFTContext)
+  const [displayModal, setDisplayModal] = useState(false)
+  const [cardIdToRemove, setCardIdToRemove] = useState<number | undefined>()
+
+  const onModalConfirm = () => {
+    setDisplayModal(false)
+    remove(cardIdToRemove)
+    setCardIdToRemove(undefined)
+  }
 
   useEffect(() => {
     loadNFTs()
@@ -17,9 +25,21 @@ const Home: React.FC = () => {
       <main className="flex w-10/12 max-w-6xl flex-col items-center justify-center text-center">
         <div className="flex w-full flex-wrap justify-center">
           {NFTs.length > 0 &&
-            NFTs.map((NFT, index) => <NFTCard key={index} NFT={NFT} />)}
+            NFTs.map((NFT, index) => (
+              <NFTCard
+                key={index}
+                NFT={NFT}
+                displayModal={setDisplayModal}
+                setCardIdToRemove={setCardIdToRemove}
+              />
+            ))}
         </div>
       </main>
+      <ModalConfirm
+        show={displayModal}
+        onClose={() => setDisplayModal(false)}
+        onBtnYes={onModalConfirm}
+      />
     </>
   )
 }

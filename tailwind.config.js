@@ -11,6 +11,7 @@ module.exports = {
         'byzantine': '#AA33B5',
         'yankees-blue': '#222345',
         'space-cadet': '#292A58',
+        'black-transparent': 'rgba(0,0,0,.45)'
       },
       fontFamily: {
         'mont': ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],

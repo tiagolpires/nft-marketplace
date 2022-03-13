@@ -36,7 +36,7 @@ export const NFTProvider: React.FC = ({ children }) => {
 
   const loadNFTs = useCallback(async () => {
     try {
-      const response = await Api.get('nfts')
+      const response = await Api.get('nfts?_sort=id&_order=desc')
       if (response.status === 200 || response.data) {
         setNFTs(response.data)
       }
@@ -80,10 +80,9 @@ export const NFTProvider: React.FC = ({ children }) => {
 
   const remove = useCallback(async (id: number | undefined) => {
     try {
-      const response = await Api.delete(`nfts/${id}`)
-      if (response.status === 200 || response.data) {
-        setNFTs(NFTs.filter((nft: NFTType) => nft.id !== id))
-      }
+      const newNFTs = NFTs.filter((nft: NFTType) => nft.id !== id)
+      setNFTs(newNFTs)
+      await Api.delete(`nfts/${id}`)
     } catch (error) {
       console.log(error)
     }

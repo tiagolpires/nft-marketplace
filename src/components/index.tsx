@@ -6,6 +6,7 @@ import Input from './input'
 import Button from './button'
 import Carousel from './carousel'
 import Header from './header'
+import ModalConfirm from './modal-confirm'
 
 export {
   Layout,
@@ -16,4 +17,5 @@ export {
   Button,
   Carousel,
   Header,
+  ModalConfirm,
 }

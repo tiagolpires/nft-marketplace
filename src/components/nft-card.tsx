@@ -1,18 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useContext } from 'react'
 import { NFTButtonCard } from '.'
-import { NFTType, NFTContext } from '../contexts/nfts'
+import { NFTType } from '../contexts/nfts'
 
 export interface cardProps {
   NFT: NFTType
+  setCardIdToRemove: (id: number | undefined) => void
+  displayModal: (displayModal: boolean) => void
 }
 
-const NFTCard: React.FC<cardProps> = ({ NFT }) => {
-  const { remove } = useContext(NFTContext)
-
-  const deleteCard = () => {
-    remove(NFT.id)
+const NFTCard: React.FC<cardProps> = ({
+  NFT,
+  displayModal,
+  setCardIdToRemove,
+}) => {
+  const handleDeleteClick = () => {
+    setCardIdToRemove(NFT.id)
+    displayModal(true)
   }
   return (
     <div className="mx-6 my-4 rounded-lg bg-yankees-blue">
@@ -38,7 +42,7 @@ const NFTCard: React.FC<cardProps> = ({ NFT }) => {
               <NFTButtonCard icon="edit.svg" />
             </a>
           </Link>
-          <NFTButtonCard onClick={deleteCard} icon="trash.svg" />
+          <NFTButtonCard onClick={handleDeleteClick} icon="trash.svg" />
         </div>
       </div>
     </div>
