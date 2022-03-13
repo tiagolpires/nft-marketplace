@@ -8,7 +8,7 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({ label, name, value, onChange }) => {
   return (
     <div className="my-3 flex w-full max-w-xl flex-col">
-      <label className="mb-1 flex items-start" htmlFor="">
+      <label className="mb-1 flex items-start" htmlFor={name}>
         {label}
       </label>
       <input
