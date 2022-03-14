@@ -3,20 +3,50 @@
     {
       "id": 1,
       "name": "Nas",
-      "image": "1.jpeg",
-      "price": 250
+      "image": "8.jpeg",
+      "price": 4
     },
     {
       "id": 2,
       "name": "Stullerag",
-      "image": "2.jpeg",
-      "price": "2994"
+      "image": "7.jpeg",
+      "price": 15
     },
     {
       "id": 3,
       "name": "Thissima",
+      "image": "6.jpeg",
+      "price": 8
+    },
+    {
+      "name": "Zanid",
+      "price": 13,
+      "image": "5.jpeg",
+      "id": 4
+    },
+    {
+      "name": "Ravisa",
+      "price": 12,
+      "image": "4.jpeg",
+      "id": 5
+    },
+    {
+      "name": "Bizad",
+      "price": 2,
       "image": "3.jpeg",
-      "price": 100
+      "id": 6
+    },
+    {
+      "name": "Danala",
+      "price": 8,
+      "image": "2.jpeg",
+      "id": 7
+    },
+    {
+      "name": "Zimin",
+      "price": 15,
+      "image": "1.jpeg",
+      "id": 8
     }
   ]
 }

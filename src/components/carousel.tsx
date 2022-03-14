@@ -1,7 +1,17 @@
 import Image from 'next/image'
 import Slider from 'react-slick'
 
-const images = ['1.jpeg', '2.jpeg', '3.jpeg', '1.jpeg', '2.jpeg', '3.jpeg']
+const images = [
+  '1.jpeg',
+  '2.jpeg',
+  '3.jpeg',
+  '4.jpeg',
+  '5.jpeg',
+  '6.jpeg',
+  '7.jpeg',
+  '9.jpeg',
+  '8.jpeg',
+]
 
 const Carousel: React.FC<any> = ({ onChange, image }) => {
   const Arrow: React.FC<any> = ({ onClick, icon }) => {
